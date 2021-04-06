@@ -12,11 +12,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.oc7m8.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.sywml.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
-  const eventCollection = client.db("vlunteer-network").collection("events");
-  const selectedEvent = client.db("vlunteer-network").collection("volunteer-events");
+  const eventCollection = client.db("fashion").collection("events");
+  const selectedEvent = client.db("fashion").collection("events");
   // console.log("connected")
   app.post('/addEvents', (req, res) =>{
     const event = req.body;
